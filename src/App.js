@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Hobbies from "./components/Hobbies";
 import Skills from "./components/Skills";
+import app from 'firebase/app';
 
 
 const App = () => {
