@@ -7,6 +7,8 @@ body {
     font: 16px Helvetica, Sans-Serif; 
     line-height: 24px; 
     background: #fff9ec; 
+    display: flex;
+    flex-direction: column;
 }
 
 .clear { 
@@ -16,6 +18,7 @@ body {
 #page-wrap { 
     width: 900px; 
     margin: 30px auto 60px; 
+    flex-grow: 1;
 }
 
 #pic {
@@ -172,15 +175,26 @@ dd.clear {
 #footer {
     background-color: #614a37; /* Dark background for footer */
     color: white; /* White text for contrast */
-    padding: 3px; /* Add some padding */
-    font-size: 14px; /* Smaller font size for footer */
+    padding: 20px; /* Add some padding for spacing */
+    font-size: 14px; /* Footer text size */
     text-align: center; /* Center text for better visual balance */
+    position: absolute; /* Footer akan berada di bawah konten */
+    bottom: 100; /* Align it to the bottom */
+    left: 0; /* Stretch to the left edge */
+    right: 0; /* Stretch to the right edge */
+    width: 100%; /* Make it span the entire width */
+    z-index: 10; /* Ensure it stays above other elements */
+    clear: both; /* Make sure it doesn't overlap floated content */
+    
 }
+  
 
 .footer-content {
     display: flex;
     justify-content: space-between; /* Space between the left and right sections */
-    flex-wrap: wrap; /* Make sure content wraps on smaller screens */
+    flex-wrap: wrap; /* Wrap content on smaller screens */
+    max-width: 1200px; /* Limit content width for better readability */
+    margin: 0 auto; /* Center the content */
 }
 
 .footer-left, .footer-right {
@@ -190,7 +204,7 @@ dd.clear {
 
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column; /* Stack content vertically on smaller screens */
+        flex-direction: column; 
         align-items: center;
     }
 }
